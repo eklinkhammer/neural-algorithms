@@ -1,0 +1,540 @@
+
+==================== FINAL INTERFACE ====================
+2017-02-12 01:36:01.722288 UTC
+
+interface neural-algorithms-0.1.0.0-G4cKiu8m1A6JbAFI6F3DlP:CCEA.XOR 8001
+  interface hash: 63e1563be1b93ce4d690954fca4424bb
+  ABI hash: 6c6b8275fb4d900e739da2f9244cdcc3
+  export-list hash: 2487cf769dceb7857e4d5d74c7ae4659
+  orphan hash: 185df010e3e81d3c90bf4ad3663d8233
+  flag hash: db84b2549858666a400c84cb900ff8fa
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  CCEA.XOR.xorBreeding
+  CCEA.XOR.xorEA
+  CCEA.XOR.xorFitness
+  CCEA.XOR.xorVars
+module dependencies: CCEA.EA Matrix.Traversable NN.NeuralNetwork
+                     RandomUtil.Random Util.MyList Util.Tuples Util.Vars
+package dependencies: MonadRandom-0.4.2.3@MonadRandom-0.4.2.3-8TfCm6PGvGYB7omozORhov
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.0.0
+                      binary-0.8.3.0@binary-0.8.3.0
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
+                      hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ
+                      hnn-0.3@hnn-0.3-FFj4by4N6nNKK66rtK9l9v integer-gmp-1.0.0.1
+                      mtl-2.2.1@mtl-2.2.1-6qsR1PHUy5lL47Hpoa4jCM
+                      mwc-random-0.13.5.0@mwc-random-0.13.5.0-9fVrEibWMFm8DwR7HO0MWX
+                      normaldistribution-1.1.0.3@normaldistribution-1.1.0.3-5Tmsx8i18mO3UhoQolUXZE
+                      primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa
+                      random-1.1@random-1.1-54KmMHXjttlERYcr1mvsAe
+                      random-shuffle-0.0.4@random-shuffle-0.0.4-LfeDYNPfwrQ2o9p6tw2M9l
+                      split-0.2.3.1@split-0.2.3.1-IJKK4pOCYGKud0jZImZke
+                      time-1.6.0.1@time-1.6.0.1 transformers-0.5.2.0@transformers-0.5.2.0
+                      vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3
+                      zlib-0.6.1.2@zlib-0.6.1.2-4CWLN1T27kOJhNvXgy46ZV
+orphans: MonadRandom-0.4.2.3@MonadRandom-0.4.2.3-8TfCm6PGvGYB7omozORhov:Control.Monad.Random
+         base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+         binary-0.8.3.0@binary-0.8.3.0:Data.Binary.Generic
+         bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Builder
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.CG
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Element
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Util
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Vector
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Numeric.Matrix
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Numeric.Vector
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Fusion.Bundle
+         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Unboxed
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Complex base-4.9.0.0:Data.Either
+                         base-4.9.0.0:Data.Functor.Const base-4.9.0.0:Data.Functor.Identity
+                         base-4.9.0.0:Data.List.NonEmpty base-4.9.0.0:Data.Monoid
+                         base-4.9.0.0:Data.Semigroup base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:Data.Version base-4.9.0.0:Data.Void
+                         base-4.9.0.0:GHC.Exts base-4.9.0.0:GHC.Generics
+                         base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Devel
+                         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Matrix
+                         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Modular
+                         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Numeric
+                         mwc-random-0.13.5.0@mwc-random-0.13.5.0-9fVrEibWMFm8DwR7HO0MWX:System.Random.MWC
+                         primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa:Control.Monad.Primitive
+                         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector
+                         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Primitive
+                         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Storable
+                         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Unboxed
+                         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Unboxed.Base
+                         zlib-0.6.1.2@zlib-0.6.1.2-4CWLN1T27kOJhNvXgy46ZV:Codec.Compression.Zlib.Stream
+import  -/  base-4.9.0.0:Data.List 49b86831b79b49ce5d4d9416ecba61df
+import  -/  base-4.9.0.0:Data.Traversable 7ce5b7ee67475ac3d03ae825b86efd9f
+import  -/  base-4.9.0.0:Data.Tuple acb0ed10307ed88df6c81b8589f4de16
+import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
+import  -/  base-4.9.0.0:GHC.Num 48f506a8f4ecf06285d0a0706594dcc0
+import  -/  base-4.9.0.0:GHC.Real 08bf4acb5f2508f89d6fbcd57fe232e9
+import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
+import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Map.Strict 48e097497655818e164c2bb81a1d7b2d
+import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
+import  -/  hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Util 8174f9a5e5fa37c5128c62ef37240fa3
+import  -/  hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Numeric.LinearAlgebra.HMatrix 4e354b7f55efceb1e6739fbf94a43aaa
+import  -/  hnn-0.3@hnn-0.3-FFj4by4N6nNKK66rtK9l9v:AI.HNN.FF.Network be8ad76dc33479d08136c3d1edf8aa27
+import  -/  CCEA.EA 42ab5abb2c54c89519e5419f580f2584
+  exports: 34832b985ee07e617d1837c2d18a2f19
+  BreedingStrategy 83384c2d3c26f6568772c92ff85938f8
+  EA 9c35d0d1b984cacf0d38d66540d67bac
+  EA 68c1c4d6c9ca0bd6294997514871c715
+  FitnessFunction 1c31628c0bfb28c9135306aabd01492d
+  mutateWeights 4dc98777f1fd63c8d93d2f6060423623
+  notElitist f6d318dbeb00a4412e757f4f9458b1ee
+  tournament 6b24e2b734c3ced6a8cd897a2d20b74c
+import  -/  NN.NeuralNetwork a7e929c67c58528fd2ec928049b637dc
+  exports: 3dbcf85690c4c5036042d02a36607d18
+  NN c79f29a410ebe4ea871978a29f7af3e8
+  NNVars 07ca56f009118a64b94279955a6f4876
+  create 8e67ed3e08386ffbe8baf3aa720aa5ad
+  get 16fb13cfa0ff133bfa441e026524d304
+import  -/  RandomUtil.Random d497c5f49863a2083ee76b325f494fdc
+  exports: dbc6485f6b0d59c92fc2ad3cabb52b6c
+import  -/  random-1.1@random-1.1-54KmMHXjttlERYcr1mvsAe:System.Random 33fad628288f84aac16d40e5a027af06
+import  -/  random-shuffle-0.0.4@random-shuffle-0.0.4-LfeDYNPfwrQ2o9p6tw2M9l:System.Random.Shuffle 3f5e54b2036bc5b8dc7743ffe99c3f89
+import  -/  vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Storable 8654c53df20dc1a97095be9c331f0e9b
+35f153df1aef7f4dc832bd277b8c1a37
+  $sfromList ::
+    [([GHC.Types.Char], a)] -> Data.Map.Base.Map [GHC.Types.Char] a
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ @ a (ds :: [([GHC.Types.Char], a)]) ->
+                 case ds of wild {
+                   [] -> Data.Map.Base.Tip @ [GHC.Types.Char] @ a
+                   : ds1 ds2
+                   -> case ds1 of wild1 { (,) kx x ->
+                      case ds2 of wild2 {
+                        []
+                        -> case x of x1 { DEFAULT ->
+                           case kx of dt { DEFAULT ->
+                           Data.Map.Base.Bin
+                             @ [GHC.Types.Char]
+                             @ a
+                             1#
+                             dt
+                             x1
+                             (Data.Map.Base.Tip @ [GHC.Types.Char] @ a)
+                             (Data.Map.Base.Tip @ [GHC.Types.Char] @ a) } }
+                        : ipv ipv1
+                        -> case ipv of wild3 { (,) ky ds3 ->
+                           case GHC.Classes.$fOrd[]_$s$ccompare1 kx ky of wild4 {
+                             DEFAULT
+                             -> case x of x0 { DEFAULT ->
+                                case kx of dt { DEFAULT ->
+                                CCEA.XOR.$sfromList1
+                                  @ a
+                                  (Data.Map.Base.Bin
+                                     @ [GHC.Types.Char]
+                                     @ a
+                                     1#
+                                     dt
+                                     x0
+                                     (Data.Map.Base.Tip @ [GHC.Types.Char] @ a)
+                                     (Data.Map.Base.Tip @ [GHC.Types.Char] @ a))
+                                  wild2 } }
+                             GHC.Types.LT
+                             -> case x of x0 { DEFAULT ->
+                                case kx of dt { DEFAULT ->
+                                CCEA.XOR.$wpoly_go4
+                                  @ a
+                                  1#
+                                  (Data.Map.Base.Bin
+                                     @ [GHC.Types.Char]
+                                     @ a
+                                     1#
+                                     dt
+                                     x0
+                                     (Data.Map.Base.Tip @ [GHC.Types.Char] @ a)
+                                     (Data.Map.Base.Tip @ [GHC.Types.Char] @ a))
+                                  wild2 } } } } } } }) -}
+7cc12eb8109f89c21aa45b63311f263c
+  $sfromList1 ::
+    Data.Map.Base.Map [GHC.Types.Char] a1
+    -> [([GHC.Types.Char], a1)]
+    -> Data.Map.Base.Map [GHC.Types.Char] a1
+  {- Arity: 2, Strictness: <S,1*U><S,1*U> -}
+1e7420d691afb10fad79fd45cb568eda
+  $sinsert_$sgo4 ::
+    [GHC.Types.Char]
+    -> a1
+    -> Data.Map.Base.Map [GHC.Types.Char] a1
+    -> Data.Map.Base.Map [GHC.Types.Char] a1
+  {- Arity: 3, Strictness: <S,1*U><S,1*U><S,1*U> -}
+a83d035ecc9afdaf65d2a261e008ccee
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   CCEA.XOR.$trModule2
+                   CCEA.XOR.$trModule1) -}
+96577570d0d23068e7a219ade77202fd
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "CCEA.XOR"#) -}
+c019811778ddc04d7a4afb94e9116634
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "neural-algorithms-0.1.0.0-G4cKiu8m1A6JbAFI6F3DlP"#) -}
+1fdfb06cfd375a78f7d8ff09e7a9a051
+  $w$sxorFitness ::
+    GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Array# (Internal.Matrix.Matrix GHC.Types.Double)
+    -> GHC.Prim.Double#
+  {- Arity: 3, Strictness: <S,U><S,U><S,U>, Inline: [0] -}
+44b14f487ed618cf4d48e1d6d77e734d
+  $wpoly_go4 ::
+    GHC.Prim.Int#
+    -> Data.Map.Base.Map [GHC.Types.Char] a
+    -> [([GHC.Types.Char], a)]
+    -> Data.Map.Base.Map [GHC.Types.Char] a
+  {- Arity: 3, Strictness: <L,U><S,1*U><S,1*U>, Inline: [0] -}
+7b166995f8b570328812af5f34328131
+  $wxorBreeding ::
+    (System.Random.RandomGen g, NN.NeuralNetwork.NN n) =>
+    g -> [n] -> (# g, [n] #)
+  {- Arity: 4, Strictness: <L,U><L,U(A,A,A,A,C(C1(U)),A)><L,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ @ g
+                   @ n
+                   (w :: System.Random.RandomGen g)
+                   (w1 :: NN.NeuralNetwork.NN n)
+                   (w2 :: g)
+                   (w3 :: [n]) ->
+                 let {
+                   ds :: (g, [n])
+                   = case CCEA.EA.$wmutateWeights
+                            @ g
+                            @ n
+                            w
+                            w1
+                            CCEA.XOR.xorVars
+                            w2
+                            w3 of ww { (#,#) ww1 ww2 ->
+                     (ww1, ww2) }
+                 } in
+                 let {
+                   ds1 :: (g, [n])
+                   = case CCEA.EA.$wmutateWeights
+                            @ g
+                            @ n
+                            w
+                            w1
+                            CCEA.XOR.xorVars
+                            (case ds of wild { (,) g' offspring1 -> g' })
+                            w3 of ww { (#,#) ww1 ww2 ->
+                     (ww1, ww2) }
+                 } in
+                 (# case ds1 of wild { (,) g'' offspring2 -> g'' },
+                    case ds of wild { (,) g' offspring1 ->
+                    GHC.Base.++
+                      @ n
+                      offspring1
+                      (case ds1 of wild1 { (,) g'' offspring2 -> offspring2 }) } #)) -}
+18496a4e97fab33e001447538eb60e40
+  $wxorFitness :: NN.NeuralNetwork.NN n => n -> GHC.Prim.Double#
+  {- Arity: 2,
+     Strictness: <S(LC(C(C(S)))LLLL),U(A,C(C1(C1(U(U,U,U)))),A,A,A,A)><L,U>,
+     Inline: [0] -}
+dcb8c7e25e63b7e372f677824491b3db
+  xorBreeding ::
+    (System.Random.RandomGen g, NN.NeuralNetwork.NN n) =>
+    CCEA.EA.BreedingStrategy n g
+  {- Arity: 4, Strictness: <L,U><L,U(A,A,A,A,C(C1(U)),A)><L,U><L,U>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (4, True, False)
+                (\ @ g
+                   @ n
+                   (w :: System.Random.RandomGen g)
+                   (w1 :: NN.NeuralNetwork.NN n)
+                   (w2 :: g)
+                   (w3 :: [n]) ->
+                 case CCEA.XOR.$wxorBreeding
+                        @ g
+                        @ n
+                        w
+                        w1
+                        w2
+                        w3 of ww { (#,#) ww1 ww2 ->
+                 (ww1, ww2) }) -}
+a06c50ad109083e0dea15347c454269e
+  xorEA ::
+    System.Random.RandomGen g =>
+    GHC.Types.IO
+      (CCEA.EA.EA (AI.HNN.FF.Network.Network GHC.Types.Double) g)
+  {- Arity: 2, Strictness: <L,U(U,U,U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                CCEA.XOR.xorEA1
+                  `cast`
+                (forall (g :: <*>_N).
+                 <System.Random.RandomGen g>_R
+                 ->_R Sym (GHC.Types.N:IO[0]
+                               <CCEA.EA.EA (AI.HNN.FF.Network.Network GHC.Types.Double) g>_R)) -}
+f53831c08f3a06224e1706c81e2507fc
+  xorEA1 ::
+    System.Random.RandomGen g =>
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          CCEA.EA.EA (AI.HNN.FF.Network.Network GHC.Types.Double) g #)
+  {- Arity: 2, Strictness: <L,U(U,U,U)><S,U>,
+     Unfolding: (\ @ g
+                   ($dRandomGen :: System.Random.RandomGen g)
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case CCEA.XOR.xorEA5 CCEA.XOR.xorEA3 s of ds1 { (#,#) ipv ipv1 ->
+                 (# ipv,
+                    CCEA.EA.EA
+                      @ (AI.HNN.FF.Network.Network GHC.Types.Double)
+                      @ g
+                      ipv1
+                      (\ (w2 :: g)
+                         (w3 :: [(AI.HNN.FF.Network.Network GHC.Types.Double,
+                                  GHC.Types.Double)]) ->
+                       case CCEA.EA.$wtournament
+                              @ g
+                              @ (AI.HNN.FF.Network.Network GHC.Types.Double)
+                              $dRandomGen
+                              CCEA.XOR.xorEA2
+                              w2
+                              w3 of ww { (#,#) ww1 ww2 ->
+                       (ww1, ww2) })
+                      CCEA.XOR.xorEA_$sxorFitness
+                      (\ (w :: g) (w1 :: [AI.HNN.FF.Network.Network GHC.Types.Double]) ->
+                       case CCEA.XOR.$wxorBreeding
+                              @ g
+                              @ (AI.HNN.FF.Network.Network GHC.Types.Double)
+                              $dRandomGen
+                              NN.NeuralNetwork.$fNNNetwork
+                              w
+                              w1 of ww { (#,#) ww1 ww2 ->
+                       (ww1, ww2) }) #) }) -}
+22011e575b42775d1e5265e14894f8df
+  xorEA2 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 2#) -}
+25aaf2730b9116876a7500b143abfba6
+  xorEA3 ::
+    [GHC.Types.IO (AI.HNN.FF.Network.Network GHC.Types.Double)]
+  {- Unfolding: (CCEA.XOR.xorEA_go CCEA.XOR.xorEA4) -}
+20fb07d02bb7aa5ec0bdbdf8a0d4a611
+  xorEA4 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (1) -}
+a929eaa103766c11b9a9c0cb36fe8475
+  xorEA5 ::
+    [GHC.Types.IO (AI.HNN.FF.Network.Network GHC.Types.Double)]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          [AI.HNN.FF.Network.Network GHC.Types.Double] #)
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,U> -}
+e92e7d980553ad7fbde8194bbb60d349
+  xorEA_$sxorFitness ::
+    CCEA.EA.FitnessFunction
+      (AI.HNN.FF.Network.Network GHC.Types.Double)
+  {- Arity: 1, Strictness: <S(SSS),U(U,U,U)>m, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: AI.HNN.FF.Network.Network GHC.Types.Double) ->
+                 case w `cast`
+                      (AI.HNN.FF.Network.N:Network[0]
+                           <GHC.Types.Double>_P) of ww { Data.Vector.Vector ww1 ww2 ww3 ->
+                 case CCEA.XOR.$w$sxorFitness ww1 ww2 ww3 of ww4 { DEFAULT ->
+                 GHC.Types.D# ww4 } }) -}
+28b833968c6855abcd4e95cdad966c48
+  xorEA_go ::
+    GHC.Integer.Type.Integer
+    -> [GHC.Types.IO (AI.HNN.FF.Network.Network GHC.Types.Double)]
+  {- Arity: 1, Strictness: <S,U> -}
+4d0afe6a291c65df0b353caff2c782b2
+  xorFitness :: NN.NeuralNetwork.NN n => CCEA.EA.FitnessFunction n
+  {- Arity: 2,
+     Strictness: <S(LC(C(C(S)))LLLL),U(A,C(C1(C1(U(U,U,U)))),A,A,A,A)><L,U>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ @ n (w :: NN.NeuralNetwork.NN n) (w1 :: n) ->
+                 case CCEA.XOR.$wxorFitness @ n w w1 of ww { DEFAULT ->
+                 GHC.Types.D# ww }) -}
+5cfff4aa8b50f56fec19c8c4f3038239
+  xorVars :: NN.NeuralNetwork.NNVars
+  {- Unfolding: (CCEA.XOR.$sfromList
+                   @ GHC.Types.Double
+                   CCEA.XOR.xorVars1) -}
+d24b41afad4c7a73f4b1396718852b40
+  xorVars1 :: [([GHC.Types.Char], GHC.Types.Double)]
+  {- Unfolding: (GHC.Types.:
+                   @ ([GHC.Types.Char], GHC.Types.Double)
+                   CCEA.XOR.xorVars38
+                   CCEA.XOR.xorVars2) -}
+59a366a958d6b7f41837a57a9356a00d
+  xorVars10 :: [([GHC.Types.Char], GHC.Types.Double)]
+  {- Unfolding: (GHC.Types.:
+                   @ ([GHC.Types.Char], GHC.Types.Double)
+                   CCEA.XOR.xorVars15
+                   CCEA.XOR.xorVars11) -}
+4da5e12b2634408dab1f63aca168bbbd
+  xorVars11 :: [([GHC.Types.Char], GHC.Types.Double)]
+  {- Unfolding: (GHC.Types.:
+                   @ ([GHC.Types.Char], GHC.Types.Double)
+                   CCEA.XOR.xorVars12
+                   (GHC.Types.[] @ ([GHC.Types.Char], GHC.Types.Double))) -}
+6c02a5bc5b995a3d16130ca07134ccbd
+  xorVars12 :: ([GHC.Types.Char], GHC.Types.Double)
+  {- Unfolding: ((CCEA.XOR.xorVars14, CCEA.XOR.xorVars13)) -}
+dd93806d77db7e866fd13d6e6025d888
+  xorVars13 :: GHC.Types.Double
+  {- HasNoCafRefs, Unfolding: (GHC.Types.D# 0.5##) -}
+1ecb952dd16f7ae96271cc43fd6e8796
+  xorVars14 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "mutationRate"#) -}
+81d6c2a6761c23c089a8f79673306300
+  xorVars15 :: ([GHC.Types.Char], GHC.Types.Double)
+  {- Unfolding: ((CCEA.XOR.xorVars17, CCEA.XOR.xorVars16)) -}
+8cafc8c75df02c4ca2d0684c9bcc9706
+  xorVars16 :: GHC.Types.Double
+  {- HasNoCafRefs, Unfolding: (GHC.Types.D# 1.0##) -}
+f3e6536b849dc00e37b036bdd10a07e6
+  xorVars17 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "gaussianStdDev"#) -}
+a52e66bd74e52a1bb5905dd99e1057fc
+  xorVars18 :: ([GHC.Types.Char], GHC.Types.Double)
+  {- Unfolding: ((CCEA.XOR.xorVars20, CCEA.XOR.xorVars19)) -}
+a5109b57d12f69f0cb791e64f11a060e
+  xorVars19 :: GHC.Types.Double
+  {- HasNoCafRefs, Unfolding: (GHC.Types.D# 0.0##) -}
+78b730359534999a88bc3f930221bd5e
+  xorVars2 :: [([GHC.Types.Char], GHC.Types.Double)]
+  {- Unfolding: (GHC.Types.:
+                   @ ([GHC.Types.Char], GHC.Types.Double)
+                   CCEA.XOR.xorVars36
+                   CCEA.XOR.xorVars3) -}
+215624de1dd621169256895f11957790
+  xorVars20 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "gaussianMean"#) -}
+79d6c505f9c76cc894c701e2be6295db
+  xorVars21 :: ([GHC.Types.Char], GHC.Types.Double)
+  {- Unfolding: ((CCEA.XOR.xorVars23, CCEA.XOR.xorVars22)) -}
+a5979297400c3bc72237ff09c19c42bd
+  xorVars22 :: GHC.Types.Double
+  {- HasNoCafRefs, Unfolding: (GHC.Types.D# 2.0##) -}
+8f6b9b338dd0033e70b02d2f245d1057
+  xorVars23 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "randomUpperBound"#) -}
+8b9bf25efa04cebdfe9ebea5d1cf5521
+  xorVars24 :: ([GHC.Types.Char], GHC.Types.Double)
+  {- Unfolding: ((CCEA.XOR.xorVars26, CCEA.XOR.xorVars25)) -}
+166ae90c297153ba3cf7de4253143d24
+  xorVars25 :: GHC.Types.Double
+  {- HasNoCafRefs, Unfolding: (GHC.Types.D# -2.0##) -}
+19fb7531eb9a874e6cef3a9a1a4ce9e1
+  xorVars26 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "randomLowerBound"#) -}
+30fa3b08e92850f9c7ddc41460f27be9
+  xorVars27 :: ([GHC.Types.Char], GHC.Types.Double)
+  {- Unfolding: ((CCEA.XOR.xorVars28, CCEA.XOR.xorVars19)) -}
+b23e967f1fdd27cd1ae12d1575b82e9b
+  xorVars28 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "sigmoidOrTanh"#) -}
+5e8ecaa620d337c49bdb290d8e2ba672
+  xorVars29 :: ([GHC.Types.Char], GHC.Types.Double)
+  {- Unfolding: ((CCEA.XOR.xorVars31, CCEA.XOR.xorVars30)) -}
+e0f60812c716bf36460bdf3135a80b0e
+  xorVars3 :: [([GHC.Types.Char], GHC.Types.Double)]
+  {- Unfolding: (GHC.Types.:
+                   @ ([GHC.Types.Char], GHC.Types.Double)
+                   CCEA.XOR.xorVars34
+                   CCEA.XOR.xorVars4) -}
+cc27a214f7baef7ad525dc772e8a9ec1
+  xorVars30 :: GHC.Types.Double
+  {- HasNoCafRefs, Unfolding: (GHC.Types.D# 0.25##) -}
+b1c223e3f8125bd9bef3c96c35280846
+  xorVars31 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "learningRate"#) -}
+f76ec752addf41ca6cf4d16314c7745d
+  xorVars32 :: ([GHC.Types.Char], GHC.Types.Double)
+  {- Unfolding: ((CCEA.XOR.xorVars33, CCEA.XOR.xorVars16)) -}
+71a28c4b6d8242f34f33c6982393dd65
+  xorVars33 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "timesToTrain"#) -}
+a347271cb906e9c9270b620cdf68c2ab
+  xorVars34 :: ([GHC.Types.Char], GHC.Types.Double)
+  {- Unfolding: ((CCEA.XOR.xorVars35, CCEA.XOR.xorVars16)) -}
+3ea865a9159952d7b5daeb152986c712
+  xorVars35 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "numberOutputs"#) -}
+a9af4db8de9238d448f200f44dea271f
+  xorVars36 :: ([GHC.Types.Char], GHC.Types.Double)
+  {- Unfolding: ((CCEA.XOR.xorVars37, CCEA.XOR.xorVars22)) -}
+2a31da6dd934c263b6659e96c3c4ef99
+  xorVars37 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "numberHidden"#) -}
+8f5d2ce5dd5ee935d47180df217dd6ad
+  xorVars38 :: ([GHC.Types.Char], GHC.Types.Double)
+  {- Unfolding: ((CCEA.XOR.xorVars39, CCEA.XOR.xorVars22)) -}
+fb0fd9374516dda17e119fc06cb1776b
+  xorVars39 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "numberInputs"#) -}
+93a27c3aa4707ab820ef8e78fa83b086
+  xorVars4 :: [([GHC.Types.Char], GHC.Types.Double)]
+  {- Unfolding: (GHC.Types.:
+                   @ ([GHC.Types.Char], GHC.Types.Double)
+                   CCEA.XOR.xorVars32
+                   CCEA.XOR.xorVars5) -}
+3d943303f61169fbe11708c28e62927b
+  xorVars5 :: [([GHC.Types.Char], GHC.Types.Double)]
+  {- Unfolding: (GHC.Types.:
+                   @ ([GHC.Types.Char], GHC.Types.Double)
+                   CCEA.XOR.xorVars29
+                   CCEA.XOR.xorVars6) -}
+8c6c01affc0812ef5453db22fb02a820
+  xorVars6 :: [([GHC.Types.Char], GHC.Types.Double)]
+  {- Unfolding: (GHC.Types.:
+                   @ ([GHC.Types.Char], GHC.Types.Double)
+                   CCEA.XOR.xorVars27
+                   CCEA.XOR.xorVars7) -}
+56ace12966f9c49ab81cf87a74773bf2
+  xorVars7 :: [([GHC.Types.Char], GHC.Types.Double)]
+  {- Unfolding: (GHC.Types.:
+                   @ ([GHC.Types.Char], GHC.Types.Double)
+                   CCEA.XOR.xorVars24
+                   CCEA.XOR.xorVars8) -}
+4604f52c313c1d1bf94288e02fe7357a
+  xorVars8 :: [([GHC.Types.Char], GHC.Types.Double)]
+  {- Unfolding: (GHC.Types.:
+                   @ ([GHC.Types.Char], GHC.Types.Double)
+                   CCEA.XOR.xorVars21
+                   CCEA.XOR.xorVars9) -}
+7c1a64efcec2bfa48e553e8fbd4a3e39
+  xorVars9 :: [([GHC.Types.Char], GHC.Types.Double)]
+  {- Unfolding: (GHC.Types.:
+                   @ ([GHC.Types.Char], GHC.Types.Double)
+                   CCEA.XOR.xorVars18
+                   CCEA.XOR.xorVars10) -}
+"SPEC xorFitness @ (Network Double)" [ALWAYS] forall ($dNN :: NN.NeuralNetwork.NN
+                                                                (AI.HNN.FF.Network.Network
+                                                                   GHC.Types.Double))
+  CCEA.XOR.xorFitness @ (AI.HNN.FF.Network.Network GHC.Types.Double)
+                      $dNN
+  = CCEA.XOR.xorEA_$sxorFitness
+"SPEC/CCEA.XOR fromList @ [Char] _" [ALWAYS] forall @ a
+                                                    ($dOrd :: GHC.Classes.Ord [GHC.Types.Char])
+  Data.Map.Strict.fromList @ [GHC.Types.Char] @ a $dOrd
+  = CCEA.XOR.$sfromList @ a
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

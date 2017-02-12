@@ -1,0 +1,209 @@
+
+==================== FINAL INTERFACE ====================
+2017-02-12 01:33:44.947132 UTC
+
+interface neural-algorithms-0.1.0.0-G4cKiu8m1A6JbAFI6F3DlP:Matrix.Traversable 8001
+  interface hash: 6cd0307439e8732d248b5a0068846712
+  ABI hash: 197368ca3b521fa6f643382626493e12
+  export-list hash: ff795e468825fbc1c4519054d95118d2
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: eeeacad9f32da57cbd3583772c704ba5
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Matrix.Traversable.matrixTraverse
+module dependencies: Util.Tuples
+package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.0.0
+                      binary-0.8.3.0@binary-0.8.3.0
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
+                      hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ
+                      integer-gmp-1.0.0.1
+                      primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa
+                      random-1.1@random-1.1-54KmMHXjttlERYcr1mvsAe
+                      split-0.2.3.1@split-0.2.3.1-IJKK4pOCYGKud0jZImZke
+                      time-1.6.0.1@time-1.6.0.1 transformers-0.5.2.0@transformers-0.5.2.0
+                      vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+         binary-0.8.3.0@binary-0.8.3.0:Data.Binary.Generic
+         bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Builder
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.CG
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Element
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Util
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Vector
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Numeric.Matrix
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Numeric.Vector
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Fusion.Bundle
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Complex base-4.9.0.0:Data.Either
+                         base-4.9.0.0:Data.Functor.Const base-4.9.0.0:Data.Functor.Identity
+                         base-4.9.0.0:Data.List.NonEmpty base-4.9.0.0:Data.Monoid
+                         base-4.9.0.0:Data.Semigroup base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:Data.Version base-4.9.0.0:Data.Void
+                         base-4.9.0.0:GHC.Exts base-4.9.0.0:GHC.Generics
+                         base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Devel
+                         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Matrix
+                         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Modular
+                         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Numeric
+                         primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa:Control.Monad.Primitive
+                         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Storable
+import  -/  base-4.9.0.0:Data.Traversable 7ce5b7ee67475ac3d03ae825b86efd9f
+import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
+import  -/  hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Element 2badda5b8a1c50b2654ea92601662f41
+import  -/  hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Matrix 515b660ee5ee78b11c9f17f31995b4f9
+import  -/  hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Numeric.LinearAlgebra.HMatrix 4e354b7f55efceb1e6739fbf94a43aaa
+import  -/  Util.Tuples 75b9d7fe6493eeec59d82faeda423e8f
+  exports: 0afb4b77145714426bd62625c80b8dd5
+  applySnd 036cf597aa51c61ef48811bcdbb090bc
+fd99d82e0bea9dcb7ace888ad997dd19
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Matrix.Traversable.$trModule2
+                   Matrix.Traversable.$trModule1) -}
+09ea038037e998d09f1cbef4768b1666
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Matrix.Traversable"#) -}
+79b6c1e35fedd614471b1e010742441c
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "neural-algorithms-0.1.0.0-G4cKiu8m1A6JbAFI6F3DlP"#) -}
+f6f4960eba1e953b6e1d3b171a1f60eb
+  $wmatrixTraverse ::
+    (Internal.Matrix.Element b, Internal.Matrix.Element c) =>
+    (a -> b -> (a, c))
+    -> a
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Addr#
+    -> GHC.ForeignPtr.ForeignPtrContents
+    -> (# a, Internal.Matrix.Matrix c #)
+  {- Arity: 11,
+     Strictness: <L,U(U,A,C(C1(C1(C1(C1(C1(C1(U))))))),A,A,A,A,A,A,A,A)><L,U(U,C(C1(U)),A,A,A,A,A,A,A,A,A)><L,C(C1(U(U,U)))><L,U><S,U><L,U><L,U><S,U><L,U><L,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ @ b
+                   @ c
+                   @ a
+                   (w :: Internal.Matrix.Element b)
+                   (w1 :: Internal.Matrix.Element c)
+                   (w2 :: a -> b -> (a, c))
+                   (w3 :: a)
+                   (ww :: GHC.Prim.Int#)
+                   (ww1 :: GHC.Prim.Int#)
+                   (ww2 :: GHC.Prim.Int#)
+                   (ww3 :: GHC.Prim.Int#)
+                   (ww4 :: GHC.Prim.Int#)
+                   (ww5 :: GHC.Prim.Addr#)
+                   (ww6 :: GHC.ForeignPtr.ForeignPtrContents) ->
+                 letrec {
+                   $wgo :: [b] -> a -> (# a, [c] #)
+                     {- Arity: 2, Strictness: <S,1*U><L,U>, Inline: [0] -}
+                   = \ (w4 :: [b]) (w5 :: a) ->
+                     case w4 of wild {
+                       [] -> (# w5, GHC.Types.[] @ c #)
+                       : y ys
+                       -> let {
+                            ds1 :: (a, c) = w2 w5 y
+                          } in
+                          let {
+                            ds3 :: (a, [c])
+                            = case $wgo
+                                     ys
+                                     (case ds1 of wild1 { (,) s' v ->
+                                      s' }) of ww7 { (#,#) ww8 ww9 ->
+                              (ww8, ww9) }
+                          } in
+                          (# case ds3 of wild1 { (,) s'' v -> s'' },
+                             GHC.Types.:
+                               @ c
+                               (case ds1 of wild1 { (,) s' v -> v })
+                               (case ds3 of wild1 { (,) s'' v -> v }) #) }
+                 } in
+                 letrec {
+                   $wgo1 :: [[b]] -> a -> (# a, [[c]] #)
+                     {- Arity: 2, Strictness: <S,1*U><L,U>, Inline: [0] -}
+                   = \ (w4 :: [[b]]) (w5 :: a) ->
+                     case w4 of wild {
+                       [] -> (# w5, GHC.Types.[] @ [c] #)
+                       : y ys
+                       -> let {
+                            ds1 :: (a, [c])
+                            = case $wgo y w5 of ww7 { (#,#) ww8 ww9 -> (ww8, ww9) }
+                          } in
+                          let {
+                            ds3 :: (a, [[c]])
+                            = case $wgo1
+                                     ys
+                                     (case ds1 of wild1 { (,) s' v ->
+                                      s' }) of ww7 { (#,#) ww8 ww9 ->
+                              (ww8, ww9) }
+                          } in
+                          (# case ds3 of wild1 { (,) s'' v -> s'' },
+                             GHC.Types.:
+                               @ [c]
+                               (case ds1 of wild1 { (,) s' v -> v })
+                               (case ds3 of wild1 { (,) s'' v -> v }) #) }
+                 } in
+                 case $wgo1
+                        (Internal.Matrix.$wtoLists @ b w ww ww1 ww2 ww3 ww4 ww5 ww6)
+                        w3 of ww7 { (#,#) ww8 ww9 ->
+                 (# ww8, Internal.Element.fromLists @ c w1 ww9 #) }) -}
+ec4f85f1d4865a9f22dbb5ba986f4120
+  matrixTraverse ::
+    (Internal.Matrix.Element b, Internal.Matrix.Element c) =>
+    (a -> b -> (a, c))
+    -> a -> Internal.Matrix.Matrix b -> (a, Internal.Matrix.Matrix c)
+  {- Arity: 5,
+     Strictness: <L,U(U,A,C(C1(C1(C1(C1(C1(C1(U))))))),A,A,A,A,A,A,A,A)><L,U(U,C(C1(U)),A,A,A,A,A,A,A,A,A)><L,C(C1(U(U,U)))><L,U><S(SLLSLLL),1*U(U,U,U,U,U,U,U)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (5, True, False)
+                (\ @ b
+                   @ c
+                   @ a
+                   (w :: Internal.Matrix.Element b)
+                   (w1 :: Internal.Matrix.Element c)
+                   (w2 :: a -> b -> (a, c))
+                   (w3 :: a)
+                   (w4 :: Internal.Matrix.Matrix b) ->
+                 case w4 of ww { Internal.Matrix.Matrix ww1 ww2 ww3 ww4 ww5 ww6 ww7 ->
+                 case Matrix.Traversable.$wmatrixTraverse
+                        @ b
+                        @ c
+                        @ a
+                        w
+                        w1
+                        w2
+                        w3
+                        ww1
+                        ww2
+                        ww3
+                        ww4
+                        ww5
+                        ww6
+                        ww7 of ww8 { (#,#) ww9 ww10 ->
+                 (ww9, ww10) } }) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

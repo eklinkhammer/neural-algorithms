@@ -1,0 +1,136 @@
+{-# LANGUAGE FlexibleInstances #-}
+{-# OPTIONS -Wall #-}
+module NN.NeuralNetwork
+  (
+    NN (..)
+  , NNVars
+  , createNetworkW
+  ) where
+
+import AI.HNN.FF.Network
+import Numeric.LinearAlgebra.HMatrix hiding (corr)
+
+
+import System.Random (RandomGen)
+import qualified Data.Vector as V
+import Control.Monad.Reader
+
+import RandomUtil.Random
+import RandomUtil.RandomMatrix
+import Util.Vars
+
+
+type NNVars = Vars
+
+sigTanString :: String
+sigTanString = "sigmoidOrTanh"
+
+class NN n where
+  create :: NNVars -> IO n
+  
+  get :: NNVars -> n -> Vector Double -> Vector Double
+  
+  train :: NNVars -> n -> Sample Double -> n
+  train vars net samp = trainV vars net [samp]
+  trainV :: NNVars -> n -> Samples Double -> n
+  randomize :: (RandomGen g) => NNVars -> g -> n -> (n, g)
+  getWeights :: n -> V.Vector (Matrix Double)
+  mutate :: (RandomGen g) => NNVars -> g -> g -> n -> (n, (g,g))
+
+instance NN (Network Double) where
+  create vars                   = createNetworkW vars
+  get vars net input            = getNetwork vars net input
+  trainV vars net io            = trainNetwork vars net io 
+  randomize vars g net          = randomizeNetwork g vars net
+  getWeights (Network m)        = m
+  mutate                        = mutateNetwork
+
+createNetworkW :: NNVars -> IO (Network Double)
+createNetworkW env = runReader createNetworkReader env
+
+createNetworkReader :: Reader NNVars (IO (Network Double))
+createNetworkReader = do
+  numInput      <- asks (getVar "numberInputs")
+  numHidden     <- asks (getVar "numberHidden")
+  numOutput     <- asks (getVar "numberOutputs")
+  return $ createNetwork (round numInput) [(round numHidden)] (round numOutput)
+
+getNetwork :: NNVars -> Network Double -> Vector Double -> Vector Double
+getNetwork vars net input = runReader (getNetworkReader net input) vars
+
+getNetworkReader :: Network Double -> Vector Double -> Reader NNVars (Vector Double)
+getNetworkReader net input = do
+  sigOrTanh <- asks (getVar sigTanString)
+  return $ if (round sigOrTanh :: Integer) == 1
+           then output net sigmoid input
+           else output net tanh input
+
+trainNetwork :: NNVars -> Network Double -> Samples Double -> Network Double
+trainNetwork vars net samples = runReader (trainNetworkReader net samples) vars
+
+trainNetworkReader :: Network Double -> Samples Double -> Reader NNVars (Network Double)
+trainNetworkReader net samples = do
+  timesToTrain  <- asks (getVar "timesToTrain")
+  learningRate  <- asks (getVar "learningRate")
+  sigOrTanh     <- asks (getVar sigTanString)
+  let network = if (round sigOrTanh :: Integer) == 1
+                then trainNTimes (round timesToTrain) learningRate sigmoid sigmoid' net samples
+                else trainNTimes (round timesToTrain) learningRate tanh tanh' net samples
+  return network
+
+randomizeNetwork :: RandomGen g => g -> NNVars -> Network Double -> (Network Double, g)
+randomizeNetwork g vars net = runReader (randomizeNetworkReader g net) vars
+
+randomizeNetworkReader :: RandomGen g => g -> Network Double -> Reader NNVars (Network Double, g)
+randomizeNetworkReader g net = do
+  percentHiddenRandom <- asks (getVar "percentHiddenToRandomize")
+  percentOutputRandom <- asks (getVar "percentOutputToRandomize")
+  lowerBound          <- asks (getVar "randomLowerBound")
+  upperBound          <- asks (getVar "randomUpperBound")
+  let netMatrix           = getWeights net
+      hidden              = V.toList $ V.init netMatrix
+      sampleHidden        = head hidden
+      numHiddenRandom     = round $ percentHiddenRandom * (fromIntegral $ (rows sampleHidden) * (cols sampleHidden))
+      outputVal           = V.last netMatrix
+      bounds              = (lowerBound, upperBound)
+      numOutputRandom     = round $ percentOutputRandom * (fromIntegral $ (rows outputVal) * (cols outputVal)) :: Int
+      
+      (hidden', (g',_))   = randomMapTwoGens (randomizeNRandomMatrixElements numHiddenRandom bounds) g g  hidden
+      (output', (g'',_))  = randomizeNRandomMatrixElements numOutputRandom bounds g' g' outputVal
+      weights             = V.fromList (hidden' ++ [output'])
+      net'                = fromWeightMatrices weights
+  return (net', g'')
+
+mutateNetwork :: RandomGen g => NNVars -> g -> g -> Network Double -> (Network Double, (g,g))
+mutateNetwork vars g1 g2 net = runReader (mutateNetworkReader g1 g2 net) vars
+
+mutateNetworkReader :: RandomGen g => g -> g -> Network Double -> Reader NNVars (Network Double, (g,g))
+mutateNetworkReader g1 g2 net = do
+  mean       <- asks (getVar "mutationNormalMean")
+  sigma      <- asks (getVar "mutationNormalSigma")
+  lowerBound <- asks (getVar "mutationLowerBound")
+  upperBound <- asks (getVar "mutationUpperBound")
+  mutationsP <- asks (getVar "mutationPercent")
+  let netMatrix            = getWeights net
+      hidden               = V.toList $ V.init netMatrix
+      numToMutH            = getPercentCount mutationsP (head hidden)
+      (hidden', (g1',g2')) = randomMapTwoGens (mutateNRandomMatrixElements numToMutH (lowerBound, upperBound) mean sigma) g1 g2 hidden
+      out                  = V.last netMatrix
+      numToMutO            = getPercentCount mutationsP out
+      (out', (g1'', g2'')) = mutateNRandomMatrixElements numToMutO (lowerBound, upperBound) mean sigma g1' g2' (V.last netMatrix)
+      netMatrix'           = V.fromList (hidden' ++ [out'])
+      net'                 = fromWeightMatrices netMatrix'
+  return $ (net', (g1'', g2''))
+
+getPercentCount :: Double -> Matrix Double -> Int
+getPercentCount percent mat = let nr = rows mat
+                                  nc = cols mat
+                                  ne = fromIntegral (nr * nc) :: Double
+                              in max 1 (round $ percent * ne)
+                                  
+                                                                                     
+
+
+
+
+                                                                                       

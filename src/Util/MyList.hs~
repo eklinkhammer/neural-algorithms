@@ -1,0 +1,13 @@
+module Util.MyList
+  (
+    removeIndices
+  ) where
+
+removeIndices :: [a] -> [Int] -> [a]
+removeIndices xs is = del (zip xs [0..]) is
+
+del :: [(a,Int)] -> [Int] -> [a]
+del xs [] = xs
+del [] is = []
+del ((x,xi):xs) ind@(i:is) = if xi == i then del xs is
+                         else x : (del xs ind)

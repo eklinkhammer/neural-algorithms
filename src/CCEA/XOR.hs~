@@ -1,0 +1,58 @@
+module CCEA.XOR
+  (
+    xorFitnessFunction
+  , xorBreedingStrategy
+  , xorSelectionStrategy
+  , nnVars
+  ) where
+
+import NN.NeuralNetwork
+import RandomUtil.Random
+
+import qualified Data.Map.Strict as Map
+import Numeric.LinearAlgebra.HMatrix
+import Data.List (sortOn, partition)
+import System.Random
+import System.Random.Shuffle
+
+nnVars :: NNVars
+nnVars = Map.fromList [("numberInputs", 2)
+                      ,("numberHidden", 2)
+                      ,("numberOutputs",1)
+                      ,("timesToTrain",1)
+                      ,("learningRate",0.25)
+                      ,("percentHiddenToRandomize",0.5)
+                      ,("percentOutputToRandomize",0.5)
+                      ,("sigmoidOrTanh",1)
+                      ,("randomLowerBound", (-2))
+                      ,("randomUpperBound", 2)
+                      ,("mutationPercent", 0.5)                       
+                      ,("mutationNormalMean", 0)
+                      ,("mutationNormalSigma", 0.5)
+                      ,("mutationLowerBound", (-1.0))
+                      ,("mutationUpperBound", 1.0)]
+
+xorFitnessFunction :: NN n => NNVars -> n -> Double
+xorFitnessFunction nnVars net = let x1  = (get nnVars net $ fromList [0.0,0.0]) ! 0
+                                    x2  = (get nnVars net $ fromList [0.0,1.0]) ! 0
+                                    x3  = (get nnVars net $ fromList [1.0,0.0]) ! 0
+                                    x4  = (get nnVars net $ fromList [1.0,1.0]) ! 0
+                                    x1e = 1 - abs (0 - x1)
+                                    x2e = 1 - abs (1 - x2)
+                                    x3e = 1 - abs (1 - x3)
+                                    x4e = 1 - abs (0 - x4)
+                                in (x1e + x2e + x3e + x4e) / 4
+
+xorBreedingStrategy :: (RandomGen g, NN n)  => NNVars -> g -> [n] -> [n]
+xorBreedingStrategy nnVars g nets = fst $ randomMapTwoGens (mutate nnVars) g1 g2 nets
+  where (g1, g2) = split g
+
+xorSelectionStrategy :: RandomGen g => g -> [(n, Double)] -> [n]
+xorSelectionStrategy g evaluatedPop = finalPop
+  where
+    sortedOnScore           = map fst $ reverse $ sortOn snd evaluatedPop
+    finalPop      = fst $ selectNRankProb (length sortedOnScore `div` 2) g sortedOnScore
+    --withBools               = zip sortedOnScore (bernoulliBools g 0.2)
+    --(selected, notSelected) = partition snd withBools
+    --shuffled                = shuffle' notSelected (length notSelected) g
+    --finalPop                = map (fst . fst) $ take (length sortedOnScore `div` 2) (selected ++ shuffled)

@@ -1,0 +1,520 @@
+
+==================== FINAL INTERFACE ====================
+2017-02-12 01:33:45.397325 UTC
+
+interface neural-algorithms-0.1.0.0-G4cKiu8m1A6JbAFI6F3DlP:RandomUtil.RandomMatrix 8001
+  interface hash: b3d96a619b9b70279a16665fe8057e90
+  ABI hash: ec52bd8d8f3c4bc4451f70f9ca128ca5
+  export-list hash: 8c1434cf5ecc21bf9ff8f91b5b9cea80
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 02f7325c5f48fe7c68b2779a26ab0089
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  RandomUtil.RandomMatrix.addGaussianNoiseToMatrixElement
+  RandomUtil.RandomMatrix.addGaussianNoiseToRandomMatrixElement
+  RandomUtil.RandomMatrix.randomMatrixIndex
+  RandomUtil.RandomMatrix.randomNMatrixElements
+  RandomUtil.RandomMatrix.randomizeRandomMatrixElement
+  RandomUtil.RandomMatrix.selectRandomMatrixElement
+  RandomUtil.RandomMatrix.RandomMatrixMutation
+module dependencies: Matrix.State Util.Tuples
+package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.0.0
+                      binary-0.8.3.0@binary-0.8.3.0
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
+                      hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ
+                      integer-gmp-1.0.0.1
+                      normaldistribution-1.1.0.3@normaldistribution-1.1.0.3-5Tmsx8i18mO3UhoQolUXZE
+                      primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa
+                      random-1.1@random-1.1-54KmMHXjttlERYcr1mvsAe
+                      split-0.2.3.1@split-0.2.3.1-IJKK4pOCYGKud0jZImZke
+                      time-1.6.0.1@time-1.6.0.1 transformers-0.5.2.0@transformers-0.5.2.0
+                      vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+         binary-0.8.3.0@binary-0.8.3.0:Data.Binary.Generic
+         bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Builder
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.CG
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Element
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Util
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Vector
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Numeric.Matrix
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Numeric.Vector
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Fusion.Bundle
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Complex base-4.9.0.0:Data.Either
+                         base-4.9.0.0:Data.Functor.Const base-4.9.0.0:Data.Functor.Identity
+                         base-4.9.0.0:Data.List.NonEmpty base-4.9.0.0:Data.Monoid
+                         base-4.9.0.0:Data.Semigroup base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:Data.Version base-4.9.0.0:Data.Void
+                         base-4.9.0.0:GHC.Exts base-4.9.0.0:GHC.Generics
+                         base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Devel
+                         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Matrix
+                         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Modular
+                         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Numeric
+                         primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa:Control.Monad.Primitive
+                         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Storable
+import  -/  base-4.9.0.0:GHC.Num 48f506a8f4ecf06285d0a0706594dcc0
+import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
+import  -/  hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Matrix 515b660ee5ee78b11c9f17f31995b4f9
+import  -/  hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Util 8174f9a5e5fa37c5128c62ef37240fa3
+import  -/  hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Numeric.LinearAlgebra.HMatrix 4e354b7f55efceb1e6739fbf94a43aaa
+import  -/  Matrix.State 94ae95c6115bed13df282a581271c5c9
+  exports: 4124a5fdde94a47e3c2e3e233f7359a0
+  MatrixIndex d1f6754d12b10e23e0f5d25dcd6be49a
+  applyFMatrixElement c2e377765bd09476dfe74ce949fd40e1
+  getElement 0a498d10f1397dfea9e0dd12e48c2e46
+  replaceMatrixElement c549e614eb8c535b3dba66816a47c70f
+import  -/  Util.Tuples 75b9d7fe6493eeec59d82faeda423e8f
+  exports: 0afb4b77145714426bd62625c80b8dd5
+import  -/  normaldistribution-1.1.0.3@normaldistribution-1.1.0.3-5Tmsx8i18mO3UhoQolUXZE:Data.Random.Normal fa80d6e1128999e1e36728d8d5ddbb48
+import  -/  random-1.1@random-1.1-54KmMHXjttlERYcr1mvsAe:System.Random 33fad628288f84aac16d40e5a027af06
+import  -/  vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Storable 8654c53df20dc1a97095be9c331f0e9b
+8615859f41d68cee4a85e106810701e4
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   RandomUtil.RandomMatrix.$trModule2
+                   RandomUtil.RandomMatrix.$trModule1) -}
+6559c5089519e3aa939c6c42633ff0a8
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "RandomUtil.RandomMatrix"#) -}
+6efdebd5d1ad79030b51c38e130d6acf
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "neural-algorithms-0.1.0.0-G4cKiu8m1A6JbAFI6F3DlP"#) -}
+376b1587434ffe8f9fdcb0e5cd90005d
+  $waddGaussianNoiseToMatrixElement ::
+    System.Random.RandomGen g =>
+    Matrix.State.MatrixIndex
+    -> RandomUtil.RandomMatrix.Mean
+    -> RandomUtil.RandomMatrix.Sigma
+    -> g
+    -> Internal.Matrix.Matrix GHC.Types.Double
+    -> (# Internal.Matrix.Matrix GHC.Types.Double, g #)
+  {- Arity: 6,
+     Strictness: <L,U><L,1*U(1*U(U),U(U))><L,U><L,U><L,U><L,1*U(U,U,U,U,U,U,U)>,
+     Inline: [0],
+     Unfolding: (\ @ g
+                   (w :: System.Random.RandomGen g)
+                   (w1 :: Matrix.State.MatrixIndex)
+                   (w2 :: RandomUtil.RandomMatrix.Mean)
+                   (w3 :: RandomUtil.RandomMatrix.Sigma)
+                   (w4 :: g)
+                   (w5 :: Internal.Matrix.Matrix GHC.Types.Double) ->
+                 let {
+                   ds :: (RandomUtil.RandomMatrix.Mean, g)
+                   = case Data.Random.Normal.$wnormal'
+                            @ g
+                            @ RandomUtil.RandomMatrix.Mean
+                            w
+                            System.Random.$fRandomDouble
+                            GHC.Float.$fFloatingDouble
+                            w2
+                            w3
+                            w4 of ww3 { (#,#) ww4 ww5 ->
+                     (ww4, ww5) }
+                 } in
+                 (# case w1 of ww { (,) ww1 ww2 ->
+                    case ww1 of ww3 { GHC.Types.I# ww4 ->
+                    case w5 of ww5 { Internal.Matrix.Matrix ww6 ww7 ww8 ww9 ww10 ww11 ww12 ->
+                    Matrix.State.$wreplaceMatrixElement
+                      @ GHC.Types.Double
+                      Internal.Matrix.$fElementDouble
+                      ww4
+                      ww2
+                      (case ww2 of wild { GHC.Types.I# x ->
+                       case GHC.Prim.tagToEnum#
+                              @ GHC.Types.Bool
+                              (GHC.Prim.>=# x 0#) of wild1 {
+                         GHC.Types.False
+                         -> RandomUtil.RandomMatrix.addGaussianNoiseToMatrixElement1
+                         GHC.Types.True
+                         -> case Internal.Util.$w$c!
+                                   @ GHC.Types.Double
+                                   Internal.Matrix.$fElementDouble
+                                   ww6
+                                   ww7
+                                   ww8
+                                   ww9
+                                   ww10
+                                   ww11
+                                   ww12
+                                   ww4 of ww16 { (#,,#) ww17 ww18 ww13 ->
+                            case Internal.CG.$sflatten_$slength
+                                   (Data.Vector.Storable.Vector
+                                      @ GHC.Types.Double
+                                      ww17
+                                      ww18
+                                      ww13) of wild2 { GHC.Types.I# y ->
+                            case GHC.Prim.tagToEnum#
+                                   @ GHC.Types.Bool
+                                   (GHC.Prim.<# x y) of wild3 {
+                              GHC.Types.False
+                              -> RandomUtil.RandomMatrix.addGaussianNoiseToMatrixElement1
+                              GHC.Types.True
+                              -> case GHC.Prim.readDoubleOffAddr#
+                                        @ GHC.Prim.RealWorld
+                                        ww18
+                                        x
+                                        GHC.Prim.realWorld# of ds2 { (#,#) ipv ipv1 ->
+                                 case GHC.Prim.touch#
+                                        @ 'GHC.Types.PtrRepLifted
+                                        @ GHC.ForeignPtr.ForeignPtrContents
+                                        ww13
+                                        ipv of s' { DEFAULT ->
+                                 case ds of wild4 { (,) sample gen' ->
+                                 case sample of wild5 { GHC.Types.D# y1 ->
+                                 GHC.Types.D# (GHC.Prim.+## ipv1 y1) } } } } } } } } })
+                      ww6
+                      ww7
+                      ww8
+                      ww9
+                      ww10
+                      ww11
+                      ww12 } } },
+                    case ds of wild { (,) sample gen' -> gen' } #)) -}
+fda0cc5af5eac97e83863cce580527ec
+  $waddGaussianNoiseToRandomMatrixElement ::
+    System.Random.RandomGen g =>
+    RandomUtil.RandomMatrix.Mean
+    -> RandomUtil.RandomMatrix.Sigma
+    -> g
+    -> Internal.Matrix.Matrix GHC.Types.Double
+    -> (# Internal.Matrix.Matrix GHC.Types.Double, g #)
+  {- Arity: 5,
+     Strictness: <L,U(U,U,U)><L,U><L,U><L,U><L,U(U,U,U,U,U,U,U)>,
+     Inline: [0],
+     Unfolding: (\ @ g
+                   (w :: System.Random.RandomGen g)
+                   (w1 :: RandomUtil.RandomMatrix.Mean)
+                   (w2 :: RandomUtil.RandomMatrix.Sigma)
+                   (w3 :: g)
+                   (w4 :: Internal.Matrix.Matrix GHC.Types.Double) ->
+                 let {
+                   ds :: (Matrix.State.MatrixIndex, g)
+                   = case RandomUtil.RandomMatrix.$wrandomMatrixIndex
+                            @ g
+                            @ GHC.Types.Double
+                            w
+                            w3
+                            w4 of ww { (#,#) ww1 ww2 ->
+                     (ww1, ww2) }
+                 } in
+                 RandomUtil.RandomMatrix.$waddGaussianNoiseToMatrixElement
+                   @ g
+                   w
+                   (case ds of wild { (,) i gen' -> i })
+                   w1
+                   w2
+                   (case ds of wild { (,) i gen' -> gen' })
+                   w4) -}
+fe7364b7f7aec670e4c2cbe07b37687d
+  $wrandomMatrixIndex ::
+    System.Random.RandomGen g =>
+    g -> Internal.Matrix.Matrix a -> (# Matrix.State.MatrixIndex, g #)
+  {- Arity: 3,
+     Strictness: <L,U(C(U(1*U(U),U)),C(U(U,U)),A)><L,U><L,U(U,U,A,A,A,A,A)>,
+     Inline: [0],
+     Unfolding: (\ @ g
+                   @ a
+                   (w :: System.Random.RandomGen g)
+                   (w1 :: g)
+                   (w2 :: Internal.Matrix.Matrix a) ->
+                 let {
+                   ds :: (GHC.Types.Int, g)
+                   = case w2 of wild { Internal.Matrix.Matrix dt dt1 dt2 dt3 dt4 dt5 dt6 ->
+                     case System.Random.$wrandomIvalInteger
+                            @ g
+                            @ GHC.Types.Int
+                            w
+                            GHC.Num.$fNumInt
+                            RandomUtil.RandomMatrix.addGaussianNoiseToRandomMatrixElement1
+                            (GHC.Integer.Type.smallInteger (GHC.Prim.-# dt 1#))
+                            w1 of ww2 { (#,#) ww3 ww4 ->
+                     (ww3, ww4) } }
+                 } in
+                 let {
+                   ds1 :: (GHC.Types.Int, g)
+                   = case w2 of wild { Internal.Matrix.Matrix dt dt1 dt2 dt3 dt4 dt5 dt6 ->
+                     case System.Random.$wrandomIvalInteger
+                            @ g
+                            @ GHC.Types.Int
+                            w
+                            GHC.Num.$fNumInt
+                            RandomUtil.RandomMatrix.addGaussianNoiseToRandomMatrixElement1
+                            (GHC.Integer.Type.smallInteger (GHC.Prim.-# dt1 1#))
+                            (case ds of wild1 { (,) i gen' -> gen' }) of ww2 { (#,#) ww3 ww4 ->
+                     (ww3, ww4) } }
+                 } in
+                 (# (case ds of wild { (,) i gen' -> i },
+                     case ds1 of wild { (,) j gen'' -> j }),
+                    case ds1 of wild { (,) j gen'' -> gen'' } #)) -}
+467d8fbdefad17f157ff7eb7cb9dc094
+  $wrandomNMatrixElements ::
+    GHC.Prim.Int#
+    -> RandomUtil.RandomMatrix.RandomMatrixMutation g a
+    -> g
+    -> Internal.Matrix.Matrix a
+    -> (# Internal.Matrix.Matrix a, g #)
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S,1*U><L,C(C1(U(U,U)))><L,U><L,U>, Inline: [0] -}
+c3f77242e4ebb89f3dedae77b7d8dee4
+  $wrandomizeRandomMatrixElement ::
+    (Internal.Matrix.Element a, System.Random.Random a,
+     System.Random.RandomGen g) =>
+    (a, a)
+    -> g
+    -> Internal.Matrix.Matrix a
+    -> (# Internal.Matrix.Matrix a, g #)
+  {- Arity: 6,
+     Strictness: <L,U(U(U,U,U,U,U,U,U,U),C(C1(U)),C(C1(C1(C1(C1(C1(U)))))),A,A,A,A,A,A,A,A)><L,1*U(1*C1(C1(C1(U(U,U)))),A,A,A,A,A)><L,U(U,U,U)><L,U><L,U><L,U(U,U,U,U,U,U,U)>,
+     Inline: [0],
+     Unfolding: (\ @ a
+                   @ g
+                   (w :: Internal.Matrix.Element a)
+                   (w1 :: System.Random.Random a)
+                   (w2 :: System.Random.RandomGen g)
+                   (w3 :: (a, a))
+                   (w4 :: g)
+                   (w5 :: Internal.Matrix.Matrix a) ->
+                 let {
+                   ds :: (Matrix.State.MatrixIndex, g)
+                   = case RandomUtil.RandomMatrix.$wrandomMatrixIndex
+                            @ g
+                            @ a
+                            w2
+                            w4
+                            w5 of ww { (#,#) ww1 ww2 ->
+                     (ww1, ww2) }
+                 } in
+                 let {
+                   ds1 :: (a, g)
+                   = System.Random.randomR
+                       @ a
+                       w1
+                       @ g
+                       w2
+                       w3
+                       (case ds of wild { (,) i gen' -> gen' })
+                 } in
+                 (# case ds of wild { (,) i gen' ->
+                    case i of ww { (,) ww1 ww2 ->
+                    case ww1 of ww3 { GHC.Types.I# ww4 ->
+                    case w5 of ww5 { Internal.Matrix.Matrix ww6 ww7 ww8 ww9 ww10 ww11 ww12 ->
+                    Matrix.State.$wreplaceMatrixElement
+                      @ a
+                      w
+                      ww4
+                      ww2
+                      (case ds1 of wild1 { (,) e gen'' -> e })
+                      ww6
+                      ww7
+                      ww8
+                      ww9
+                      ww10
+                      ww11
+                      ww12 } } } },
+                    case ds1 of wild { (,) e gen'' -> gen'' } #)) -}
+a2c5eb56c9b12aad4cfb11159de7780a
+  type Mean = GHC.Types.Double
+673882ca0596d90616f2d69709896bfd
+  type RandomMatrixIndex g = (Matrix.State.MatrixIndex, g)
+4d6f8437a9a66c0cc744d69f6bfe2ea5
+  type RandomMatrixMutation g a =
+    g -> Internal.Matrix.Matrix a -> (Internal.Matrix.Matrix a, g)
+4e6971353e810361b9a657c9908c61dc
+  type Sigma = GHC.Types.Double
+0ecaa8f2bfe8b295e9ab60aad33d83b2
+  addGaussianNoiseToMatrixElement ::
+    System.Random.RandomGen g =>
+    Matrix.State.MatrixIndex
+    -> RandomUtil.RandomMatrix.Mean
+    -> RandomUtil.RandomMatrix.Sigma
+    -> RandomUtil.RandomMatrix.RandomMatrixMutation g GHC.Types.Double
+  {- Arity: 6,
+     Strictness: <L,U><L,1*U(1*U(U),U(U))><L,U><L,U><L,U><L,1*U(U,U,U,U,U,U,U)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (6, True, False)
+                (\ @ g
+                   (w :: System.Random.RandomGen g)
+                   (w1 :: Matrix.State.MatrixIndex)
+                   (w2 :: RandomUtil.RandomMatrix.Mean)
+                   (w3 :: RandomUtil.RandomMatrix.Sigma)
+                   (w4 :: g)
+                   (w5 :: Internal.Matrix.Matrix GHC.Types.Double) ->
+                 case RandomUtil.RandomMatrix.$waddGaussianNoiseToMatrixElement
+                        @ g
+                        w
+                        w1
+                        w2
+                        w3
+                        w4
+                        w5 of ww { (#,#) ww1 ww2 ->
+                 (ww1, ww2) }) -}
+c8ba2d743eddf1ddb249ae4c995fe7e4
+  addGaussianNoiseToMatrixElement1 :: GHC.Types.Double
+  {- Strictness: x -}
+3fe6bfefd2d1dbe3fd287f02e21c4d29
+  addGaussianNoiseToRandomMatrixElement ::
+    System.Random.RandomGen g =>
+    RandomUtil.RandomMatrix.Mean
+    -> RandomUtil.RandomMatrix.Sigma
+    -> RandomUtil.RandomMatrix.RandomMatrixMutation g GHC.Types.Double
+  {- Arity: 5,
+     Strictness: <L,U(U,U,U)><L,U><L,U><L,U><L,U(U,U,U,U,U,U,U)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (5, True, False)
+                (\ @ g
+                   (w :: System.Random.RandomGen g)
+                   (w1 :: RandomUtil.RandomMatrix.Mean)
+                   (w2 :: RandomUtil.RandomMatrix.Sigma)
+                   (w3 :: g)
+                   (w4 :: Internal.Matrix.Matrix GHC.Types.Double) ->
+                 case RandomUtil.RandomMatrix.$waddGaussianNoiseToRandomMatrixElement
+                        @ g
+                        w
+                        w1
+                        w2
+                        w3
+                        w4 of ww { (#,#) ww1 ww2 ->
+                 (ww1, ww2) }) -}
+b0480d5d298cff7bc89c6243634f403c
+  addGaussianNoiseToRandomMatrixElement1 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (0) -}
+04917cb76f68c3701636c04ba38f2209
+  randomMatrixIndex ::
+    System.Random.RandomGen g =>
+    g
+    -> Internal.Matrix.Matrix a
+    -> RandomUtil.RandomMatrix.RandomMatrixIndex g
+  {- Arity: 3,
+     Strictness: <L,U(C(U(1*U(U),U)),C(U(U,U)),A)><L,U><L,U(U,U,A,A,A,A,A)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ g
+                   @ a
+                   (w :: System.Random.RandomGen g)
+                   (w1 :: g)
+                   (w2 :: Internal.Matrix.Matrix a) ->
+                 case RandomUtil.RandomMatrix.$wrandomMatrixIndex
+                        @ g
+                        @ a
+                        w
+                        w1
+                        w2 of ww { (#,#) ww1 ww2 ->
+                 (ww1, ww2) }) -}
+94a32b3c737f7d767e3ae328b96f3bc3
+  randomNMatrixElements ::
+    (Internal.Matrix.Element a, System.Random.Random a,
+     System.Random.RandomGen g) =>
+    GHC.Types.Int
+    -> RandomUtil.RandomMatrix.RandomMatrixMutation g a
+    -> RandomUtil.RandomMatrix.RandomMatrixMutation g a
+  {- Arity: 7, HasNoCafRefs,
+     Strictness: <L,A><L,A><L,A><S(S),1*U(1*U)><L,C(C1(U(U,U)))><L,U><L,U>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (7, True, False)
+                (\ @ a
+                   @ g
+                   (w :: Internal.Matrix.Element a)
+                   (w1 :: System.Random.Random a)
+                   (w2 :: System.Random.RandomGen g)
+                   (w3 :: GHC.Types.Int)
+                   (w4 :: RandomUtil.RandomMatrix.RandomMatrixMutation g a)
+                   (w5 :: g)
+                   (w6 :: Internal.Matrix.Matrix a) ->
+                 case w3 of ww { GHC.Types.I# ww1 ->
+                 case RandomUtil.RandomMatrix.$wrandomNMatrixElements
+                        @ a
+                        @ g
+                        ww1
+                        w4
+                        w5
+                        w6 of ww2 { (#,#) ww3 ww4 ->
+                 (ww3, ww4) } }) -}
+f940986ff22b055a5c5328bf1213975c
+  randomizeRandomMatrixElement ::
+    (Internal.Matrix.Element a, System.Random.Random a,
+     System.Random.RandomGen g) =>
+    (a, a) -> RandomUtil.RandomMatrix.RandomMatrixMutation g a
+  {- Arity: 6,
+     Strictness: <L,U(U(U,U,U,U,U,U,U,U),C(C1(U)),C(C1(C1(C1(C1(C1(U)))))),A,A,A,A,A,A,A,A)><L,1*U(1*C1(C1(C1(U(U,U)))),A,A,A,A,A)><L,U(U,U,U)><L,U><L,U><L,U(U,U,U,U,U,U,U)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (6, True, False)
+                (\ @ a
+                   @ g
+                   (w :: Internal.Matrix.Element a)
+                   (w1 :: System.Random.Random a)
+                   (w2 :: System.Random.RandomGen g)
+                   (w3 :: (a, a))
+                   (w4 :: g)
+                   (w5 :: Internal.Matrix.Matrix a) ->
+                 case RandomUtil.RandomMatrix.$wrandomizeRandomMatrixElement
+                        @ a
+                        @ g
+                        w
+                        w1
+                        w2
+                        w3
+                        w4
+                        w5 of ww { (#,#) ww1 ww2 ->
+                 (ww1, ww2) }) -}
+36003b18cf46db194e71d21ad781e25c
+  selectRandomMatrixElement ::
+    (Internal.Matrix.Element a,
+     Internal.Util.Indexable (Data.Vector.Storable.Vector a) a,
+     System.Random.RandomGen g) =>
+    g -> Internal.Matrix.Matrix a -> (a, g)
+  {- Arity: 5,
+     Strictness: <L,U(U(U,U,U,U,U,U,U,U),A,C(C1(C1(C1(C1(C1(U)))))),A,A,A,A,A,A,A,A)><L,1*C1(C1(U))><L,U(C(U(1*U(U),U)),C(U(U,U)),A)><L,U><L,U(U,U,U,U,U,U,U)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (5, True, False)
+                (\ @ a
+                   @ g
+                   (w :: Internal.Matrix.Element a)
+                   (w1 :: Internal.Util.Indexable (Data.Vector.Storable.Vector a) a)
+                   (w2 :: System.Random.RandomGen g)
+                   (w3 :: g)
+                   (w4 :: Internal.Matrix.Matrix a) ->
+                 let {
+                   ds :: (Matrix.State.MatrixIndex, g)
+                   = case RandomUtil.RandomMatrix.$wrandomMatrixIndex
+                            @ g
+                            @ a
+                            w2
+                            w3
+                            w4 of ww { (#,#) ww1 ww2 ->
+                     (ww1, ww2) }
+                 } in
+                 (case ds of wild { (,) i gen' ->
+                  case i of wild1 { (,) i1 j ->
+                  w1
+                    `cast`
+                  (Internal.Util.N:Indexable[0]
+                       <Data.Vector.Storable.Vector a>_N <a>_N)
+                    (Internal.Util.$fIndexableMatrixVector_$c! @ a w w4 i1)
+                    j } },
+                  case ds of wild { (,) i gen' -> gen' })) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

@@ -1,0 +1,63 @@
+{-# LANGUAGE FlexibleContexts #-}
+
+module RandomUtil.RandomMatrix
+  (
+    selectRandomMatrixElement
+  , randomMatrixIndex
+  , randomizeRandomMatrixElement
+  , randomizeNRandomMatrixElements
+  , mutateNRandomMatrixElements
+  ) where
+
+import System.Random
+import Data.Random.Normal
+import Matrix.State
+import Numeric.LinearAlgebra.HMatrix hiding (corr)
+
+
+selectRandomMatrixElement ::
+  ( Element a
+  , Indexable (Vector a) a
+  , RandomGen g)
+  => g -> Matrix a -> a
+selectRandomMatrixElement g m = let (i,j) = randomMatrixIndex g m
+                                in m ! i ! j
+
+randomMatrixIndex :: RandomGen g => g -> Matrix a -> MatrixIndex
+randomMatrixIndex g m = let (i, newG) = randomR (0, (rows m) - 1) g
+                        in (i, fst (randomR (0, (cols m) - 1) newG))
+
+randomizeRandomMatrixElement :: (Element a, Random a, RandomGen g) => g -> g -> (a,a) -> MatrixMutation a
+randomizeRandomMatrixElement indexGen elementGen bounds  m = let i = randomMatrixIndex indexGen m
+                                                                 e = fst $ randomR bounds elementGen
+                                                     in replaceMatrixElement i e m 
+
+
+randomizeNRandomMatrixElements ::
+  (Num a, Element a, Random a, Indexable (Vector a) a, RandomGen g) =>
+  Int -> (a,a) -> g -> g -> Matrix a -> (Matrix a, (g,g))
+randomizeNRandomMatrixElements 0 _ indexGen elementGen m = (m, (indexGen, elementGen))
+randomizeNRandomMatrixElements n b indexGen elementGen m =
+  let mutated            = randomizeRandomMatrixElement indexGen elementGen b m
+      (_, newIndexGen)   = next indexGen
+      (_, newElementGen) = next elementGen
+  in randomizeNRandomMatrixElements (n - 1) b newIndexGen newElementGen mutated
+
+type Mean = Double
+type Sigma = Double
+type Bounds = (Double, Double)
+
+mutateRandomMatrixElement :: RandomGen g => g -> g -> Bounds -> Mean -> Sigma -> MatrixMutation Double
+mutateRandomMatrixElement indexGen elementGen bounds u s m = let (i,j)       = randomMatrixIndex indexGen m
+                                                                 e           = m ! i ! j
+                                                                 (sample, g) = normal' (u,s) elementGen
+                                                                 newE        = min (snd bounds) $ max (fst bounds) (sample + e) 
+                                                             in replaceMatrixElement (i,j) newE m
+
+mutateNRandomMatrixElements :: RandomGen g => Int -> Bounds -> Mean -> Sigma -> g -> g -> Matrix Double -> (Matrix Double, (g,g))
+mutateNRandomMatrixElements 0 _ _ _ g1 g2 m = (m, (g1, g2))
+mutateNRandomMatrixElements n b u s g1 g2 m = let mutant = mutateRandomMatrixElement g1 g2 b u s m
+                                                  (_, newg1) = next g1
+                                                  (_, newg2) = next g2
+                                              in mutateNRandomMatrixElements (n - 1) b u s newg1 newg2 mutant
+
