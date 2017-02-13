@@ -36,7 +36,7 @@ xorTest2 = TestCase (do
                         assertEqual "test2" True (fuzzyEqual finalScore 1.0))
 
 fuzzyEqual :: Double -> Double -> Bool
-fuzzyEqual x y = abs (x - y) < 0.05
+fuzzyEqual x y = abs (x - y) < 0.1
 
 bestNetwork :: NN n => [n] -> n
 bestNetwork nets = let popWithFit = zip nets $ map xorFitness nets
