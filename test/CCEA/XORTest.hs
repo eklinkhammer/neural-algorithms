@@ -5,9 +5,7 @@ module CCEA.XORTest
 
 import Test.HUnit
 
-import CCEA.XOR
-import CCEA.EA
-import CCEA.CCEA
+import CCEA
 
 import NN.NeuralNetwork
 
