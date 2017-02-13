@@ -10,7 +10,6 @@ module CCEA.CCEA
   , CCEAVars
   , Population
   , CCEAFitnessFunction
-  
   ) where
 
 import System.Random
