@@ -26,9 +26,7 @@ library
                      , Util.Vars
                      , Util.Tuples
                      , Util.MyList
-  other-modules:       CCEA.EA
-                     , CCEA.CCEA
-                     , CCEA.XOR
+  other-modules:       CCEA.XOR
   build-depends:       base >= 4.7 && < 5
                      , random
                      , hmatrix
