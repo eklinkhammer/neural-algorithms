@@ -9,6 +9,8 @@ module CCEA.CCEA
   , createPopulation
   , CCEAVars
   , Population
+  , CCEAFitnessFunction
+  
   ) where
 
 import System.Random
