@@ -16,8 +16,6 @@ cabal-version:       >=1.10
 library
   hs-source-dirs:      src
   exposed-modules:     CCEA
-                     , CCEA.CCEA
-                     , CCEA.EA
                      , Matrix.State
                      , Matrix.Traversable
                      , NN.NeuralNetwork
@@ -25,6 +23,8 @@ library
                      , RandomUtil.RandomMatrix
                      , NUtil
   other-modules:       CCEA.XOR
+                     , CCEA.CCEA
+                     , CCEA.EA
                      , Util.Vars
                      , Util.MyList
                      , Util.Tuples
