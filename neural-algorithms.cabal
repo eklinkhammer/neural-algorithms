@@ -23,7 +23,7 @@ library
                      , NN.NeuralNetwork
                      , RandomUtil.Random
                      , RandomUtil.RandomMatrix
-                     , Util
+                     , NUtil
   other-modules:       CCEA.XOR
                      , Util.Vars
                      , Util.MyList

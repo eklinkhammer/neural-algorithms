@@ -1,4 +1,4 @@
-module Util
+module NUtil
   (
     module Util.MyList
   , module Util.Vars

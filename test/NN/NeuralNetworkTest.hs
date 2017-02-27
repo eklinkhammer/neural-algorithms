@@ -7,7 +7,7 @@ import Test.HUnit
 import AI.HNN.FF.Network
 import Numeric.LinearAlgebra.HMatrix hiding (corr)
 
-import Util
+import NUtil
 import NN.NeuralNetwork
 import qualified Data.Map.Strict as Map
 
