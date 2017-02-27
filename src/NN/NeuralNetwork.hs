@@ -6,6 +6,7 @@ module NN.NeuralNetwork
   , NNVars
   , createNetworkW
   , Network (..)
+  , module Util.Vars
   ) where
 
 import AI.HNN.FF.Network

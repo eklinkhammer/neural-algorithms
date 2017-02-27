@@ -2,9 +2,10 @@
 
 module CCEA.CCEA
   (
-    evolveCCEA
+                                                                    
+    CCEA (..)
+  , evolveCCEA
   , evolveNCCEA
-  , CCEA (..)
   , liftStateless
   , createPopulation
   , CCEAVars
