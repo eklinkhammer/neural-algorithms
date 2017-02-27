@@ -23,10 +23,11 @@ library
                      , NN.NeuralNetwork
                      , RandomUtil.Random
                      , RandomUtil.RandomMatrix
-                     , Util.Vars
-                     , Util.Tuples
-                     , Util.MyList
+                     , Util
   other-modules:       CCEA.XOR
+                     , Util.Vars
+                     , Util.MyList
+                     , Util.Tuples
   build-depends:       base >= 4.7 && < 5
                      , random
                      , hmatrix
