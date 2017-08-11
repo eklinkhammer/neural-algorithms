@@ -40,8 +40,8 @@ testsLabel = TestList [ TestLabel "test1" testCreate
 
 testCreate :: Test
 testCreate = TestCase (do
-                          network <- create nnVars :: IO (Network Double)
-                          let smartNet = trainNTimes 1500 0.8 tanh tanh' network samples
+                          net <- create nnVars :: IO Net
+                          let smartNet = trainNTimes 1500 0.8 tanh tanh' (_network net) samples
 --                              outputValues = map (get smartNet . fst) samples
                               outputValues = convert1 $ map (output smartNet tanh . fst) samples
                           assertEqual "testCreate"
@@ -50,18 +50,18 @@ testCreate = TestCase (do
 
 testGet :: Test
 testGet = TestCase (do
-                       network <- create nnVars :: IO (Network Double)
-                       let smartNet = trainNTimes 1000 0.8 tanh tanh' network samples
-                           outputValues = convert1 $ map (get nnVars smartNet . fst) samples
+                       net <- create nnVars :: IO Net
+                       let smartNet = trainNTimes 1000 0.8 tanh tanh' (_network net) samples
+                           outputValues = convert1 $ map (get (Net smartNet nnVars) . fst) samples
                        assertEqual "testGet"
                          True
                          (floatVectorCompare outputValues expectedOutputVals 0.2))
 
 testTrainV :: Test
 testTrainV = TestCase (do
-                         network <- create nnVars :: IO (Network Double)
-                         let smartNet = repeatNet trainV nnVars network samples 1000
-                             outputValues = convert1 $ map (get nnVars smartNet . fst) samples
+                         net <- create nnVars :: IO Net
+                         let smartNet = repeatNet trainV net samples 1000
+                             outputValues = convert1 $ map (get smartNet . fst) samples
                          assertEqual "testTrainV"
                            True
                            (floatVectorCompare outputValues expectedOutputVals 0.2))
@@ -73,6 +73,6 @@ convert1 = map (! 0)
 floatVectorCompare :: [Double] -> [Double] -> Double -> Bool
 floatVectorCompare a b tol = foldr (&&) True $ zipWith (\x y -> abs (x - y) < tol ) a b
 
-repeatNet :: (a -> n -> c -> n) -> a -> n -> c -> Int -> n
-repeatNet _ _ net _ 0 = net
-repeatNet f a net c n = let net' = f a net c in repeatNet f a net' c (n-1)
+repeatNet :: (n -> c -> n) -> n -> c -> Int -> n
+repeatNet _ net _ 0 = net
+repeatNet f net c n = let net' = f net c in repeatNet f net' c (n-1)

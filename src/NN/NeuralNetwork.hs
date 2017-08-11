@@ -5,7 +5,7 @@ module NN.NeuralNetwork
     NN (..)
   , NNVars
   , createNetworkW
-  , Network (..)
+  , Net (..)
   , module Util.Vars
   ) where
 
@@ -24,19 +24,31 @@ type NNVars = Vars
 
 class NN n where
   create :: NNVars -> IO n
-  get :: NNVars -> n -> Vector Double -> Vector Double
-  train :: NNVars -> n -> Sample Double -> n
-  train vars net samp = trainV vars net [samp]
-  trainV :: NNVars -> n -> Samples Double -> n
-  randomize :: (RandomGen g) => NNVars -> g -> n -> (g,n)
+  get :: n -> Vector Double -> Vector Double
+  train :: n -> Sample Double -> n
+  train net samp = trainV net [samp]
+  trainV :: n -> Samples Double -> n
+  randomize :: (RandomGen g) => g -> n -> (g,n)
   getWeights :: n -> V.Vector (Matrix Double)
+  getVars :: n -> NNVars
 
-instance NN (Network Double) where
-  create vars                   = createNetworkW vars
-  get vars net input            = getNetwork vars net input
-  trainV vars net io            = trainNetwork vars net io 
-  randomize vars g net          = randomizeNetwork vars g net
-  getWeights (Network m)        = m
+data Net = Net
+  {
+    _network :: Network Double
+  , _vars    :: NNVars
+  }
+
+instance NN Net where
+  create vars = do
+    n <- createNetworkW vars
+    return $ Net n vars
+  get net input = getNetwork (_vars net) (_network net) input
+  trainV net io = let vars = _vars net in Net (trainNetwork vars (_network net) io) vars
+  randomize g net = let vars = _vars net
+                        (g',n) = randomizeNetwork vars g (_network net)
+                    in (g', Net n vars)
+  getWeights (Net (Network m) _) = m
+  getVars (Net _ vars) = vars
 
 createNetworkW :: NNVars -> IO (Network Double)
 createNetworkW env = runReader createNetworkReader env
@@ -75,12 +87,11 @@ randomizeNetwork vars g net = runReader (randomizeNetworkReader g net) vars
 
 randomizeNetworkReader :: RandomGen g
   => g -> Network Double -> Reader NNVars (g, Network Double)
-randomizeNetworkReader g net = do
+randomizeNetworkReader g net@(Network weights) = do
   mean <- asks (getVar meanS)
   std  <- asks (getVar stddevS)
   rate <- asks (getVar mutationRate)
   let mutF = probApply rate (addNormalNoise mean std)
-      weights = getWeights net
       (g', weights') = mapAccumL (matrixTraverse mutF) g weights 
   return $ (g',fromWeightMatrices weights')
 

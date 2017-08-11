@@ -27,7 +27,7 @@ xorTest1 = TestCase (do
 
 xorTest2 :: Test
 xorTest2 = TestCase (do
-                        pop <- createPopulation 5 100 xorVars :: IO (Population (Network Double))
+                        pop <- createPopulation 5 100 xorVars :: IO (Population Net)
                         g   <- getStdGen
                         let ccea = CCEA pop (liftStateless xorFitness) xorBreeding (tournament 2) ()
                             (_,cceaF) = evolveNCCEA 100 g ccea

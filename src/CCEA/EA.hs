@@ -109,5 +109,5 @@ notElitist s1 s2 g parents = let (g', offspring1) = s1 g parents
                                  (g'', offspring2) = s2 g' parents
                              in (g'', offspring1 ++ offspring2)
 
-mutateWeights :: (RandomGen g, NN n) => NNVars -> BreedingStrategy n g
-mutateWeights nnVars g nets = mapAccumL (randomize nnVars) g nets
+mutateWeights :: (RandomGen g, NN n) => BreedingStrategy n g
+mutateWeights g nets = mapAccumL randomize g nets
