@@ -37,8 +37,6 @@ library
                      , mtl
                      , containers
                      , random-shuffle
-                     , repa
-                     , repa-algorithms
   default-language:    Haskell2010
 
 test-suite neural-algorithms-test
